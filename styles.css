@@ -1,69 +1,96 @@
+/* Сброс стилей */
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
+/* Страница */
 body {
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
 }
 
-/* GRID-контейнер для всей страницы */
+/* Основной контейнер (GRID) */
 .container {
+    display: grid;
     width: 800px;
     height: 600px;
+    background-color: #fff;
     border: 2px solid #000;
-    background: #fff;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 60px 1fr 40px;
 }
 
-/* Хедер (флекс) */
+/* Хедер */
 .header {
-    background: #ddd;
-    padding: 10px;
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 10px 15px;
 }
 
-/* Боковое меню чатов */
+/* Боковое меню */
 .chat-list {
-    background: #f4f4f4;
+    background-color: #f7f7f7;
+    border-right: 1px solid #ccc;
     padding: 10px;
+    border-radius: 4px;
 }
 
-/* Главное окно чата */
+/* Чат-окно */
 .chat-window {
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
     padding: 10px;
 }
 
 /* Сообщения */
 .messages {
-    overflow-y: auto;
-    background: #eaeaea;
+    flex-grow: 1;
+    background: #e5e5e5;
     padding: 10px;
     margin-bottom: 10px;
+    overflow-y: auto;
 }
 
-/* Отдельное сообщение */
+/* Блок сообщения */
 .message {
-    background: #cce5ff;
-    padding: 5px;
-    border-radius: 5px;
+    background-color: #cce5ff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    max-width: fit-content;
+    word-break: break-word;
+}
+
+/* Сообщение собеседника */
+.message--foreign {
+    margin-left: auto;
 }
 
 /* Поле ввода */
 .message-input {
+    padding: 8px 10px;
     width: 100%;
-    padding: 10px;
+    border: 1px solid #ccc;
 }
 
 /* Футер */
 .footer {
-    background: #ddd;
-    padding: 10px;
+    grid-column: 1 / span 2;
+    background-color: #ddd;
     text-align: center;
+    padding: 8px;
 }
 
 ul {
-    list-style: none;
+    list-style-type: none;
 }
